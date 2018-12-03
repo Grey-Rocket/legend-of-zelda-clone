@@ -5,7 +5,7 @@ using UnityEngine;
 public class Instantiate : MonoBehaviour
 {
 
-    public Transform sea;
+    //public Transform sea;
     public Transform land;
 
     private GameObject parent;
@@ -13,7 +13,6 @@ public class Instantiate : MonoBehaviour
     public int stranica = 20;
     void Start()
     {
-        arr = new Transform[] { land, forrest, mountain, grassland };
 
         Generiraj();
     }
@@ -32,15 +31,16 @@ public class Instantiate : MonoBehaviour
     {
         parent = new GameObject("parent");
 
-        int st_polj = 0;
-
-        for (int i = 0; i < stranica * stranica; i++)
+        for (int y = 0; y < stranica; y++)
         {
-            if ((int)Random.Range(0, 2) == 1)
+            for (int x = 0; x < stranica; x++)
             {
-                st_polj++;
+
+                Instantiate(land, new Vector3(0.4f * (x-10), 0.4f * (y-10), 0), Quaternion.identity, parent.transform);
+
             }
 
         }
 
+    }
 }
