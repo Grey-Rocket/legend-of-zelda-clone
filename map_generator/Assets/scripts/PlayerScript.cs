@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
+public class PlayerScript : MonoBehaviour
+{
 
-    
+    public GridLayout blocker;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-        
-	}
-	// Update is called once per 
-	void Update ()
+    }
 
+    // Update is called once per 
+    void Update()
     {
         if (Input.GetKeyDown("left"))
         {
-            GetComponent<Transform>().position = new Vector2(GetComponent<Transform>().position.x -1.0f, GetComponent<Transform>().position.y); 
+            //Debug.Log();
+            GetComponent<Transform>().position = new Vector2(GetComponent<Transform>().position.x - 1.0f, GetComponent<Transform>().position.y);
         }
         else if (Input.GetKeyDown("right"))
         {
